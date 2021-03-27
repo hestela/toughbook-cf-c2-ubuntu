@@ -1,5 +1,5 @@
 # Enable GPS and GPS time
-I've provided an install script to get you going `sudo ./fix-gpsd.sh`.  
+I've provided an install script to get you going `sudo ./setup-gpsd-service.sh`.  
 This type of 4G modem GPS combo provides GPS sentences on /dev/ttyUSB1.  
 The 4G modem is accessed on ttyUSB0 and ttyUSB2.  
 
@@ -44,3 +44,8 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
 ^- pugot.canonical.com           2   6   377    51    +27ms[  +27ms] +/-  142ms
 ```
 As long as NMEA is in there, the time should start getting updated via GPS.
+
+## Fix GPS after wake from sleep/hibernate
+I found the GPS likes to break when the system wakes from sleep or hibernate.  
+For me, /dev/ttyUSB1 just disappears on wake.  
+Fix with: `sudo ./fix-gpsd.sh`
