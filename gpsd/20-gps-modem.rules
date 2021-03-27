@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", KERNEL=="ttyUSB1", TAG+="systemd", ENV{SYSTEMD_WANTS}+="gpsd.service"
