@@ -16,6 +16,13 @@ to start the gpsd service once /dev/ttyUSB1 exists.
 
 To check if the GPS is working just run `cgps -s`.
 
+After the gpsd service starts, it can take about a minute for the GPS to warm up and get the first location.
+You can see if you GPS is plugged in correctly with:
+```
+lsusb | grep Sierra
+Bus 002 Device 005: ID 1199:9041 Sierra Wireless, Inc. EM7355
+```
+
 ## Required packages
 gpsd-clients and gpsd
 
