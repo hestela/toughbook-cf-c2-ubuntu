@@ -1,0 +1,12 @@
+[Unit]
+Description=Force Restore ALSA Mixer Settings
+After=sound.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/alsactl restore
+# Had to add sleep otherwise this never worked.
+ExecStartPre=/usr/bin/sleep 20
+
+[Install]
+WantedBy=multi-user.target
