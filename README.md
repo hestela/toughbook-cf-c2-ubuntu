@@ -17,14 +17,14 @@ Mainly what you need to do is select and unmute the speaker in alsamixer and the
 ![step 1](alsamixer-1.png)
 2. press F6
 ![step 2](alsamixer-2.png)
-3. select Intel PCH
+3. select Intel PCH and hit enter
 4. use right arrow to slect Headphone (for me this was the first slot next to master)
 ![step 2-3](alsamixer-3.png)
-5. If "MM" apears in the headphone mixer, hit the m key which will change it to ""00"
+5. If "MM" apears in the headphone mixer, hit the m key which will change it to "00"
 6. use up arrow to set desired volume
 ![step 5-6](alsamixer-4.png)
 7. do not close alsamixer, open a new terminal tab or new terminal
-8. `sudo alsactl store` to save the alsamixer state. you may close alsamixer if you'd like
+8. `sudo alsactl store` to save the alsamixer state. now you may close alsamixer if you'd like
 9. test that audio is working `speaker-test -t wav -c 2` you should hear this coming out of the small spearker in the left. The panasonic specs show this speaker as mono.
 9. now we setup the systemd unit to restore the alsamixer state on boot
 ```bash
